@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def scriptsDir = "$rootDir/scripts/"
+apply from: "$scriptsDir/script-proguard.gradle"
+
+android {
+    compileSdkVersion Versions.compileSdkVersion
+    buildToolsVersion Versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId ApplicationId.id
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release
+        debug {
+            testCoverageEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation CoreLibraries.kotlinStandardLibrary
+    implementation CoreLibraries.coreKtx
+    implementation CoreLibraries.appCompat
+    implementation CoreLibraries.constraintLayout
+
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.extJunit
+    androidTestImplementation TestLibraries.espresso
+}
