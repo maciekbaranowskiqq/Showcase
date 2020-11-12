@@ -15,7 +15,7 @@ object Versions {
     const val coreKtx = "1.3.2"
     const val appCompat = "1.2.0"
     const val constraintLayout = "1.1.3"
-
+    const val hilt = "2.28-alpha"
 
     const val junit = "4.12"
     const val extJunit = "1.1.2"
@@ -35,6 +35,9 @@ object CoreLibraries {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object ThirdPartyLibraries {
@@ -45,9 +48,13 @@ object TestLibraries {
     const val junit = "junit:junit:${Versions.junit}"
     const val extJunit = "androidx.test.ext:junit:${Versions.extJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object GradlePlugins {
     const val androidPlugin = "com.android.tools.build:gradle:${Versions.androidPlugin}"
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinPlugin}"
+    const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 }

@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 def scriptsDir = "$rootDir/scripts/"
 apply from: "$scriptsDir/script-proguard.gradle"
@@ -18,6 +20,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    hilt {
+        enableTransformForLocalTests = true
+    }
+
     buildTypes {
         release
         debug {
@@ -32,7 +38,13 @@ dependencies {
     implementation CoreLibraries.appCompat
     implementation CoreLibraries.constraintLayout
 
+    implementation CoreLibraries.hiltAndroid
+    kapt CoreLibraries.hiltAndroidCompiler
+
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.extJunit
     androidTestImplementation TestLibraries.espresso
+
+    androidTestImplementation TestLibraries.hiltAndroidTest
+    kaptAndroidTest TestLibraries.hiltAndroidCompiler
 }
