@@ -20,6 +20,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     hilt {
         enableTransformForLocalTests = true
     }
@@ -29,6 +33,15 @@ android {
         debug {
             testCoverageEnabled true
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -40,6 +53,8 @@ dependencies {
 
     implementation CoreLibraries.hiltAndroid
     kapt CoreLibraries.hiltAndroidCompiler
+    implementation CoreLibraries.hiltLifecycleViewModel
+    kapt CoreLibraries.hiltCompiler
 
     implementation CoreLibraries.navigationFragmentKtx
     implementation CoreLibraries.navigationUiKtx
@@ -47,7 +62,7 @@ dependencies {
     implementation CoreLibraries.navigationCompose
 
     implementation CoreLibraries.lifecycleExtensions
-    implementation CoreLibraries.lifecycleViewmodelKtx
+    implementation CoreLibraries.lifecycleViewModelKtx
 
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.extJunit

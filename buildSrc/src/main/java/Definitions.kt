@@ -2,6 +2,9 @@ object ApplicationId {
     const val id = "com.showcase.app"
 }
 
+object Modules {
+    const val app = ":app"
+}
 
 object Versions {
     const val compileSdkVersion = 30
@@ -18,7 +21,10 @@ object Versions {
     const val hilt = "2.28-alpha"
     const val navigation = "2.3.1"
     const val navigationCompose = "1.0.0-alpha02"
+    const val hiltJetpack = "1.0.0-alpha01"
     const val lifecycle = "2.2.0"
+    const val googlePlayCore = "1.8.0"
+    const val googlePlayCoreKtx = "1.8.1"
 
     const val junit = "4.12"
     const val extJunit = "1.1.2"
@@ -28,27 +34,33 @@ object Versions {
     const val kotlinPlugin = "1.4.0"
 }
 
-object Modules {
-    const val app = ":app"
-}
-
-
 object CoreLibraries {
     const val kotlinStandardLibrary = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltLifecycleViewModel =
+        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltJetpack}"
+    const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltJetpack}"
 
-    const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+
+    const val navigationFragmentKtx =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
-    const val navigationDynamicFeaturesFragment =  "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
-    const val navigationCompose =  "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    const val navigationDynamicFeaturesFragment =
+        "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val navigationCompose =
+        "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
 
-    const val lifecycleExtensions =  "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
-    const val lifecycleViewmodelKtx =  "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+
+    const val googlePlayCore = "com.google.android.play:core:${Versions.googlePlayCore}"
+    const val googlePlayCoreKtx = "com.google.android.play:core-ktx:${Versions.googlePlayCoreKtx}"
 }
 
 object ThirdPartyLibraries {

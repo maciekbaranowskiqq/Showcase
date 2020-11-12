@@ -1,4 +1,4 @@
-package com.showcase.app
+package com.showcase.ui.blank
 
 import androidx.lifecycle.ViewModel
 
