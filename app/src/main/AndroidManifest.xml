@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.showcase">
+    package="com.showcase.showcase">
 
     <application
         android:name="com.showcase.ui.App"

@@ -1,4 +1,4 @@
-package com.example.domain
+package com.showcase.domain
 
 data class User (
     val name: String,

@@ -1,4 +1,4 @@
-package com.example.showcase
+package com.showcase.showcase
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

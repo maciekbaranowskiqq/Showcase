@@ -27,6 +27,10 @@ object Versions {
     const val googlePlayCore = "1.8.0"
     const val googlePlayCoreKtx = "1.8.1"
 
+    const val retrofit = "2.9.0"
+    const val moshi = "1.9.3"
+    const val okHttpInterceptor = "3.11.0"
+
     const val junit = "4.12"
     const val extJunit = "1.1.2"
     const val espresso = "3.3.0"
@@ -63,6 +67,13 @@ object CoreLibraries {
 
     const val googlePlayCore = "com.google.android.play:core:${Versions.googlePlayCore}"
     const val googlePlayCoreKtx = "com.google.android.play:core-ktx:${Versions.googlePlayCoreKtx}"
+
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
+    const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
+    const val okHttpIntereptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
 }
 
 object ThirdPartyLibraries {

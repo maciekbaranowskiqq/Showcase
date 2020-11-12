@@ -3,7 +3,7 @@ package com.showcase.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.showcase.databinding.ActivityMainBinding
+import com.showcase.showcase.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
