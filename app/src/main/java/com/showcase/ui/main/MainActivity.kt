@@ -21,10 +21,5 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         viewModel.onTransitionToForeground()
     }
-
-    override fun onStop() {
-        viewModel.onTransitionToBackground()
-        super.onStop()
-    }
 }
 

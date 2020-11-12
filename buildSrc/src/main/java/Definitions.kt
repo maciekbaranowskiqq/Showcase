@@ -4,6 +4,7 @@ object ApplicationId {
 
 object Modules {
     const val app = ":app"
+    const val domain = ":domain"
 }
 
 object Versions {

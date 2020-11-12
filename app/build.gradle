@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    api project(Modules.domain)
     implementation CoreLibraries.kotlinStandardLibrary
     implementation CoreLibraries.coreKtx
     implementation CoreLibraries.appCompat
