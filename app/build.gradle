@@ -41,10 +41,18 @@ dependencies {
     implementation CoreLibraries.hiltAndroid
     kapt CoreLibraries.hiltAndroidCompiler
 
+    implementation CoreLibraries.navigationFragmentKtx
+    implementation CoreLibraries.navigationUiKtx
+    implementation CoreLibraries.navigationDynamicFeaturesFragment
+    implementation CoreLibraries.navigationCompose
+
+    implementation CoreLibraries.lifecycleExtensions
+    implementation CoreLibraries.lifecycleViewmodelKtx
+
     testImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.extJunit
     androidTestImplementation TestLibraries.espresso
-
+    androidTestImplementation TestLibraries.navigationTesting
     androidTestImplementation TestLibraries.hiltAndroidTest
     kaptAndroidTest TestLibraries.hiltAndroidCompiler
 }

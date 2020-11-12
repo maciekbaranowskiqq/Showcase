@@ -16,6 +16,9 @@ object Versions {
     const val appCompat = "1.2.0"
     const val constraintLayout = "1.1.3"
     const val hilt = "2.28-alpha"
+    const val navigation = "2.3.1"
+    const val navigationCompose = "1.0.0-alpha02"
+    const val lifecycle = "2.2.0"
 
     const val junit = "4.12"
     const val extJunit = "1.1.2"
@@ -38,6 +41,14 @@ object CoreLibraries {
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+
+    const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigationDynamicFeaturesFragment =  "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val navigationCompose =  "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+
+    const val lifecycleExtensions =  "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val lifecycleViewmodelKtx =  "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
 }
 
 object ThirdPartyLibraries {
@@ -51,6 +62,8 @@ object TestLibraries {
 
     const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+
+    const val navigationTesting = "androidx.navigation:navigation-testing:${Versions.navigation}"
 }
 
 object GradlePlugins {
