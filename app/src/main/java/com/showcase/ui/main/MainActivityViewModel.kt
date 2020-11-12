@@ -10,8 +10,4 @@ class MainActivityViewModel @ViewModelInject constructor(
     fun onTransitionToForeground() {
         uiMessagePresenter.showToast("Transition to Foreground")
     }
-
-    fun onTransitionToBackground() {
-        uiMessagePresenter.showToast("Transition to Background")
-    }
 }

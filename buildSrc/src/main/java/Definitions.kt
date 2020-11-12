@@ -29,6 +29,7 @@ object Versions {
     const val junit = "4.12"
     const val extJunit = "1.1.2"
     const val espresso = "3.3.0"
+    const val mockK = "1.10.0"
 
     const val androidPlugin = "4.0.1"
     const val kotlinPlugin = "1.4.0"
@@ -76,6 +77,9 @@ object TestLibraries {
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
     const val navigationTesting = "androidx.navigation:navigation-testing:${Versions.navigation}"
+
+    const val mockKUnit = "io.mockk:mockk:${Versions.mockK}"
+    const val mockKInstrumented = "io.mockk:mockk-android:${Versions.mockK}"
 }
 
 object GradlePlugins {

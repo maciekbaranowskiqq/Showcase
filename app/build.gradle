@@ -69,5 +69,6 @@ dependencies {
     androidTestImplementation TestLibraries.espresso
     androidTestImplementation TestLibraries.navigationTesting
     androidTestImplementation TestLibraries.hiltAndroidTest
-    kaptAndroidTest TestLibraries.hiltAndroidCompiler
+    testImplementation TestLibraries.mockKUnit
+    androidTestImplementation TestLibraries.mockKInstrumented
 }
