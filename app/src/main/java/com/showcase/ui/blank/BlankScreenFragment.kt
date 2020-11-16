@@ -1,0 +1,57 @@
+package com.showcase.ui.blank
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.showcase.common.observeNotNull
+import com.showcase.showcase.databinding.BlankFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class BlankScreenFragment : Fragment() {
+    private lateinit var binding: BlankFragmentBinding
+    private val viewModel: BlankScreenViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = BlankFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(view, savedInstanceState)
+        initRendering()
+    }
+
+    private fun initRendering() = with(viewModel) {
+        isProgressIndicatorVisibleLiveData.observeNotNull(
+            viewLifecycleOwner,
+            ::renderProgressIndicator
+        )
+        onDataTextChangedLiveData.observeNotNull(viewLifecycleOwner, ::renderWinnerNameText)
+    }
+
+    private fun renderProgressIndicator(isVisible: Boolean) = with(binding) {
+        progress.isVisible = isVisible
+    }
+
+    private fun renderWinnerNameText(text: String) = with(binding) {
+        textData.text = text
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.onInteraction(BlankScreenInteractions.ScreenEntered)
+    }
+}
