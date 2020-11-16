@@ -1,0 +1,9 @@
+android {
+    flavorDimensions "api"
+    productFlavors {
+        staging {
+            dimension "api"
+            buildConfigField "String", "API_URL", "\"https://api.openbrewerydb.org\""
+        }
+    }
+}

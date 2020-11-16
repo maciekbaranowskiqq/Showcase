@@ -1,4 +1,4 @@
-package com.showcase.ui.blank
+package com.showcase.ui.brewery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,20 +8,20 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.showcase.common.observeNotNull
-import com.showcase.showcase.databinding.BlankFragmentBinding
+import com.showcase.showcase.databinding.BreweryFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BlankScreenFragment : Fragment() {
-    private lateinit var binding: BlankFragmentBinding
-    private val viewModel: BlankScreenViewModel by viewModels()
+class BreweryScreenFragment : Fragment() {
+    private lateinit var binding: BreweryFragmentBinding
+    private val viewModel: BreweryScreenViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = BlankFragmentBinding.inflate(inflater, container, false)
+        binding = BreweryFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -46,12 +46,12 @@ class BlankScreenFragment : Fragment() {
     }
 
     private fun renderWinnerNameText(text: String) = with(binding) {
-        textData.text = text
+        textBreweryName.text = text
     }
 
     override fun onResume() {
         super.onResume()
 
-        viewModel.onInteraction(BlankScreenInteractions.ScreenEntered)
+        viewModel.onInteraction(BreweryScreenInteractions.ScreenEntered)
     }
 }

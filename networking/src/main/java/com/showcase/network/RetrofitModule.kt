@@ -1,5 +1,7 @@
 package com.showcase.network
 
+import com.showcase.network.BuildConfig.API_URL
+import com.showcase.network.api.BreweryApiService
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -28,7 +30,13 @@ internal object RetrofitModule {
         okHttpClient: OkHttpClient,
         moshiConverterFactory: MoshiConverterFactory
     ): Retrofit = Retrofit.Builder()
+        .baseUrl(API_URL)
         .client(okHttpClient)
         .addConverterFactory(moshiConverterFactory)
         .build()
+
+    @Provides
+    @Reusable
+    internal fun provideBreweryApiService(retrofit: Retrofit): BreweryApiService =
+        retrofit.create(BreweryApiService::class.java)
 }

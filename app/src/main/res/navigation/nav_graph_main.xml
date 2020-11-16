@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.showcase.ui.blank.BlankScreenFragment"
+        android:name="com.showcase.ui.brewery.BreweryScreenFragment"
         android:label="blank_fragment"
-        tools:layout="@layout/blank_fragment" />
+        tools:layout="@layout/brewery_fragment" />
 </navigation>

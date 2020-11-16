@@ -1,5 +1,6 @@
 def scriptsDir = "$rootDir/scripts/"
 apply from: "$scriptsDir/common-android-library.gradle"
+apply from: "$scriptsDir/script-api-flavour.gradle"
 
 android {
     defaultConfig {

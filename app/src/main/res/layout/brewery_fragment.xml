@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.showcase.ui.blank.BlankScreenFragment">
+    tools:context="com.showcase.ui.brewery.BreweryScreenFragment">
 
     <TextView
-        android:id="@+id/text_data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/text_brewery_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

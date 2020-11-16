@@ -1,4 +1,4 @@
-include ':network'
+include ':networking'
 include ':domain'
 include ':app'
 rootProject.name = "Showcase App"
