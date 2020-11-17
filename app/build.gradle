@@ -48,6 +48,7 @@ android {
 dependencies {
     api project(Modules.domain)
     implementation project(Modules.networking)
+    implementation project(Modules.analytics)
 
     implementation CoreLibraries.kotlinStandardLibrary
     implementation CoreLibraries.coreKtx

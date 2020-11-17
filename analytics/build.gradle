@@ -1,0 +1,15 @@
+apply from: "$rootDir/scripts/common-android-library.gradle"
+
+android {
+    defaultConfig {
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        release {
+            buildConfigField "String", "ANALYTICS_TOKEN", "\"releaseToken\""
+        }
+        debug {
+            buildConfigField "String", "ANALYTICS_TOKEN", "\"debugToken\""
+        }
+    }
+}
