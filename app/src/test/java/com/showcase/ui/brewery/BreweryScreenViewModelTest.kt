@@ -13,7 +13,6 @@ import com.showcase.ui.brewery.BreweryScreenInteractions.*
 import io.mockk.*
 
 class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
-
     private lateinit var subject: BreweryScreenViewModel
 
     @RelaxedMockK private lateinit var mockedBreweryNetwork: BreweryNetwork
