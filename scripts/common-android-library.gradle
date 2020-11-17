@@ -40,5 +40,6 @@ dependencies {
     kapt CoreLibraries.hiltCompiler
 
     testImplementation TestLibraries.mockKUnit
+    testImplementation TestLibraries.coroutinesTest
     testImplementation TestLibraries.junit
 }
