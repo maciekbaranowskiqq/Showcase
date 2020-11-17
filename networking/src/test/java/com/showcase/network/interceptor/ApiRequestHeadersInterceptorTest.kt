@@ -1,6 +1,5 @@
 package com.showcase.network.interceptor
 
-import android.os.Build
 import com.showcase.network.common.RandomIdGenerator
 import io.mockk.Called
 import io.mockk.MockKAnnotations

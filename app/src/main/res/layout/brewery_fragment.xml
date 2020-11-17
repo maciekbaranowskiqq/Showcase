@@ -7,7 +7,6 @@
     tools:context="com.showcase.ui.brewery.BreweryScreenFragment">
 
     <TextView
-        android:id="@+id/text_brewery_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +16,6 @@
 
 
     <ProgressBar
-        android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

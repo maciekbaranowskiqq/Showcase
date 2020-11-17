@@ -2,12 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph_main"
-    app:startDestination="@id/blankFragment">
+    app:startDestination="@id/breweryFragment">
 
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/breweryFragment"
         android:name="com.showcase.ui.brewery.BreweryScreenFragment"
-        android:label="blank_fragment"
+        android:label="brewery_fragment"
         tools:layout="@layout/brewery_fragment" />
 </navigation>

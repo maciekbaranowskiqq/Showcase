@@ -79,10 +79,6 @@ object CoreLibraries {
         "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
 }
 
-object ThirdPartyLibraries {
-
-}
-
 object TestLibraries {
     const val junit = "junit:junit:${Versions.junit}"
     const val extJunit = "androidx.test.ext:junit:${Versions.extJunit}"
