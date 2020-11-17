@@ -16,12 +16,11 @@ class BreweryScreenViewModel @ViewModelInject constructor(
     private val uiMessagePresenter: UiMessagePresenter
 ) : ViewModel() {
 
-    private val _isProgressIndicatorVisibleLiveData =
-        MutableLiveData<Boolean>().apply { value = false }
+    private val _isProgressIndicatorVisibleLiveData = MutableLiveData<Boolean>().apply { value = false }
     val isProgressIndicatorVisibleLiveData: LiveData<Boolean> = _isProgressIndicatorVisibleLiveData
 
-    private val _onDataTextChangedLiveData = MutableLiveData<String>().apply { value = "" }
-    val onDataTextChangedLiveData: LiveData<String> = _onDataTextChangedLiveData
+    private val _breweryScreenViewStateLiveData = MutableLiveData<BreweryScreenViewState>()
+    val breweryScreenViewStateLiveData: LiveData<BreweryScreenViewState> = _breweryScreenViewStateLiveData
 
     fun onInteraction(interaction: BreweryScreenInteractions) {
         when (interaction) {
@@ -30,11 +29,11 @@ class BreweryScreenViewModel @ViewModelInject constructor(
     }
 
     private fun onScreenEntered() {
-        showProgressIndicator()
-        getBreweryCall()
+        getBreweryDetails()
     }
 
-    private fun getBreweryCall() {
+    private fun getBreweryDetails() {
+        showProgressIndicator()
         viewModelScope.launch {
             when (val result = breweryNetwork.getRandomBrewery()) {
                 is ApiCallResult.Success -> onBreweryFetched(result.body)
@@ -46,11 +45,7 @@ class BreweryScreenViewModel @ViewModelInject constructor(
     }
 
     private fun onBreweryFetched(brewery: Brewery) {
-        showResultMessage(brewery.name)
-    }
-
-    private fun showResultMessage(resultMessage: String) {
-        _onDataTextChangedLiveData.value = resultMessage
+        _breweryScreenViewStateLiveData.value = brewery.toViewState()
     }
 
     private fun showProgressIndicator() {
@@ -60,5 +55,11 @@ class BreweryScreenViewModel @ViewModelInject constructor(
     private fun hideProgressIndicator() {
         _isProgressIndicatorVisibleLiveData.value = false
     }
+
+    data class BreweryScreenViewState(val breweryName: String)
+
+    private fun Brewery.toViewState(): BreweryScreenViewState = BreweryScreenViewState(
+        breweryName = name
+    )
 }
 

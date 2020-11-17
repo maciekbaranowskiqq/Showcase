@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.showcase.common.observeNotNull
 import com.showcase.showcase.databinding.BreweryFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import com.showcase.ui.brewery.BreweryScreenViewModel.BreweryScreenViewState
 
 @AndroidEntryPoint
 class BreweryScreenFragment : Fragment() {
@@ -34,19 +35,16 @@ class BreweryScreenFragment : Fragment() {
     }
 
     private fun initRendering() = with(viewModel) {
-        isProgressIndicatorVisibleLiveData.observeNotNull(
-            viewLifecycleOwner,
-            ::renderProgressIndicator
-        )
-        onDataTextChangedLiveData.observeNotNull(viewLifecycleOwner, ::renderWinnerNameText)
+        isProgressIndicatorVisibleLiveData.observeNotNull(viewLifecycleOwner, ::renderProgressIndicator)
+        breweryScreenViewStateLiveData.observeNotNull(viewLifecycleOwner, ::renderWinnerNameText)
     }
 
     private fun renderProgressIndicator(isVisible: Boolean) = with(binding) {
         progress.isVisible = isVisible
     }
 
-    private fun renderWinnerNameText(text: String) = with(binding) {
-        textBreweryName.text = text
+    private fun renderWinnerNameText(viewState: BreweryScreenViewState) = with(binding) {
+        textBreweryName.text = viewState.breweryName
     }
 
     override fun onResume() {

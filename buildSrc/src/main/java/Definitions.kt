@@ -27,6 +27,8 @@ object Versions {
     const val lifecycle = "2.2.0"
     const val googlePlayCore = "1.8.0"
     const val googlePlayCoreKtx = "1.8.1"
+    const val androidXCore = "2.1.0"
+    const val coroutinesTest = "1.2.1"
 
     const val retrofit = "2.9.0"
     const val moshi = "1.9.3"
@@ -93,6 +95,10 @@ object TestLibraries {
 
     const val mockKUnit = "io.mockk:mockk:${Versions.mockK}"
     const val mockKInstrumented = "io.mockk:mockk-android:${Versions.mockK}"
+
+    const val archCoreTesting = "androidx.arch.core:core-testing:${Versions.androidXCore}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
 }
 
 object GradlePlugins {

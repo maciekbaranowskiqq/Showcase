@@ -74,4 +74,6 @@ dependencies {
     androidTestImplementation TestLibraries.hiltAndroidTest
     testImplementation TestLibraries.mockKUnit
     androidTestImplementation TestLibraries.mockKInstrumented
+    testImplementation TestLibraries.archCoreTesting
+    testImplementation TestLibraries.coroutinesTest
 }
