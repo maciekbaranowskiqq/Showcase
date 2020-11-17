@@ -23,7 +23,7 @@ class MainActivityViewModelTest {
     }
 
     @Test
-    fun `show toast when apps going to foreground`() {
+    fun `shows toast when apps going to foreground`() {
         subject.onTransitionToForeground()
 
         verify { mockedUiMessagePresenter.showToast(any()) }

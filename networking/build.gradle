@@ -16,7 +16,7 @@ dependencies {
 
     api CoreLibraries.retrofit
     api CoreLibraries.retrofitMoshi
-    api CoreLibraries.okHttpIntereptor
+    api CoreLibraries.okHttpInterceptor
     api CoreLibraries.moshi
     kapt CoreLibraries.moshiKotlinCodegen
 }

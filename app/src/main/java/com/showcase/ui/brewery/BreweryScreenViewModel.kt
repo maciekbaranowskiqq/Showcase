@@ -14,7 +14,8 @@ import kotlinx.coroutines.launch
 class BreweryScreenViewModel @ViewModelInject constructor(
     private val breweryNetwork: BreweryNetwork,
     private val uiMessagePresenter: UiMessagePresenter,
-    private val navigator: BreweryScreenNavigator
+    private val navigator: BreweryScreenNavigator,
+    private val analytics: BreweryScreenAnalytics
 ) : ViewModel() {
 
     private val _isProgressIndicatorVisibleLiveData = MutableLiveData<Boolean>().apply { value = false }
@@ -24,6 +25,7 @@ class BreweryScreenViewModel @ViewModelInject constructor(
     val breweryScreenViewStateLiveData: LiveData<BreweryScreenViewState> = _breweryScreenViewStateLiveData
 
     fun onInteraction(interaction: BreweryScreenInteractions) {
+        analytics.logInteraction(interaction)
         when (interaction) {
             is BreweryScreenInteractions.ScreenEntered -> onScreenEntered()
             is BreweryScreenInteractions.ContinueButtonClicked -> onContinueButtonClicked()

@@ -4,13 +4,14 @@ import com.showcase.common.UiMessagePresenter
 import com.showcase.domain.Brewery
 import com.showcase.network.api.BreweryNetwork
 import com.showcase.network.common.ApiCallResult
+import com.showcase.ui.brewery.BreweryScreenInteractions.ContinueButtonClicked
+import com.showcase.ui.brewery.BreweryScreenInteractions.ScreenEntered
 import com.showcase.util.InstantTaskExecutionTest
+import io.mockk.*
 import io.mockk.impl.annotations.RelaxedMockK
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import com.showcase.ui.brewery.BreweryScreenInteractions.*
-import io.mockk.*
 
 class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
     private lateinit var subject: BreweryScreenViewModel
@@ -18,6 +19,7 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
     @RelaxedMockK private lateinit var mockedBreweryNetwork: BreweryNetwork
     @RelaxedMockK private lateinit var mockedUiMessagePresenter: UiMessagePresenter
     @RelaxedMockK private lateinit var mockedBreweryScreenNavigator: BreweryScreenNavigator
+    @RelaxedMockK private lateinit var mockedAnalytics: BreweryScreenAnalytics
 
     @Before
     override fun setUp() {
@@ -27,7 +29,8 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
         subject = BreweryScreenViewModel(
             breweryNetwork = mockedBreweryNetwork,
             uiMessagePresenter = mockedUiMessagePresenter,
-            navigator = mockedBreweryScreenNavigator
+            navigator = mockedBreweryScreenNavigator,
+            analytics = mockedAnalytics
         )
     }
 
@@ -100,5 +103,16 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
         subject.onInteraction(ContinueButtonClicked)
 
         verify { mockedBreweryScreenNavigator.navigateToNextScreen() }
+    }
+
+    @Test
+    fun `logs interactions to analytics`() {
+        subject.onInteraction(ScreenEntered)
+        subject.onInteraction(ContinueButtonClicked)
+
+        verifyOrder {
+            mockedAnalytics.logInteraction(ScreenEntered)
+            mockedAnalytics.logInteraction(ContinueButtonClicked)
+        }
     }
 }

@@ -65,7 +65,7 @@ object CoreLibraries {
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
     const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
-    const val okHttpIntereptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
+    const val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
 }
 
 object TestLibraries {

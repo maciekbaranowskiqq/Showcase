@@ -1,8 +1,8 @@
 package com.showcase.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.showcase.showcase.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
