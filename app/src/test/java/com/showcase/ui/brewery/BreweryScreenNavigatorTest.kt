@@ -23,7 +23,7 @@ class BreweryScreenNavigatorTest {
 
     @Test
     fun `show Toast with information about what should happen next`() {
-        subject.navigateToCodeVerificationScreen()
+        subject.navigateToNextScreen()
 
         verify { mockedUiMessagePresenter.showToast("Should take user to the next screen.") }
     }

@@ -8,7 +8,7 @@ class BreweryScreenNavigator @Inject constructor(
     private val uiMessagePresenter: UiMessagePresenter
 ) : MainNavigator() {
 
-    fun navigateToCodeVerificationScreen() {
+    fun navigateToNextScreen() {
         uiMessagePresenter.showToast("Should take user to the next screen.")
     }
 }

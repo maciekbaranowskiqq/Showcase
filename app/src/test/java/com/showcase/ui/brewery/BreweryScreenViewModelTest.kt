@@ -17,6 +17,7 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
 
     @RelaxedMockK private lateinit var mockedBreweryNetwork: BreweryNetwork
     @RelaxedMockK private lateinit var mockedUiMessagePresenter: UiMessagePresenter
+    @RelaxedMockK private lateinit var mockedBreweryScreenNavigator: BreweryScreenNavigator
 
     @Before
     override fun setUp() {
@@ -25,7 +26,8 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
 
         subject = BreweryScreenViewModel(
             breweryNetwork = mockedBreweryNetwork,
-            uiMessagePresenter = mockedUiMessagePresenter
+            uiMessagePresenter = mockedUiMessagePresenter,
+            navigator = mockedBreweryScreenNavigator
         )
     }
 
@@ -90,5 +92,13 @@ class BreweryScreenViewModelTest : InstantTaskExecutionTest() {
         subject.onInteraction(ScreenEntered)
 
         assertEquals(expectedMoreScreenViewState, subject.breweryScreenViewStateLiveData.value)
+    }
+
+    @Test
+    fun `navigates to next screen when continue button is clicked`() {
+
+        subject.onInteraction(ContinueButtonClicked)
+
+        verify { mockedBreweryScreenNavigator.navigateToNextScreen() }
     }
 }

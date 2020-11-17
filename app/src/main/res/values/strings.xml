@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="brewery_screen_button_continue">CONTINUE</string>
 </resources>

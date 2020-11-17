@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.showcase.common.observeNotNull
 import com.showcase.showcase.databinding.BreweryFragmentBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.showcase.ui.brewery.BreweryScreenInteractions.ContinueButtonClicked
+import com.showcase.ui.brewery.BreweryScreenInteractions.ScreenEntered
 import com.showcase.ui.brewery.BreweryScreenViewModel.BreweryScreenViewState
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BreweryScreenFragment : Fragment() {
@@ -32,6 +34,11 @@ class BreweryScreenFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
         initRendering()
+        initInteractions()
+    }
+
+    private fun initInteractions() {
+        binding.continueButton.setOnClickListener { viewModel.onInteraction(ContinueButtonClicked) }
     }
 
     private fun initRendering() = with(viewModel) {
@@ -50,6 +57,6 @@ class BreweryScreenFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        viewModel.onInteraction(BreweryScreenInteractions.ScreenEntered)
+        viewModel.onInteraction(ScreenEntered)
     }
 }
