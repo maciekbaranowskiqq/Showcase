@@ -25,8 +25,6 @@ object Versions {
     const val navigationCompose = "1.0.0-alpha02"
     const val hiltJetpack = "1.0.0-alpha01"
     const val lifecycle = "2.2.0"
-    const val googlePlayCore = "1.8.0"
-    const val googlePlayCoreKtx = "1.8.1"
     const val androidXCore = "2.1.0"
     const val coroutinesTest = "1.2.1"
 
@@ -47,36 +45,26 @@ object CoreLibraries {
     const val kotlinStandardLibrary = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    const val constraintLayout =
-        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
-    const val hiltLifecycleViewModel =
-        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltJetpack}"
+    const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltJetpack}"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltJetpack}"
 
-
-    const val navigationFragmentKtx =
-        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
-    const val navigationDynamicFeaturesFragment =
-        "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
-    const val navigationCompose =
-        "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    const val navigationDynamicFeaturesFragment = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
 
     const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
-
-    const val googlePlayCore = "com.google.android.play:core:${Versions.googlePlayCore}"
-    const val googlePlayCoreKtx = "com.google.android.play:core-ktx:${Versions.googlePlayCoreKtx}"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
     const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
-    const val okHttpIntereptor =
-        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
+    const val okHttpIntereptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptor}"
 }
 
 object TestLibraries {
@@ -85,7 +73,6 @@ object TestLibraries {
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
     const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
-    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
     const val navigationTesting = "androidx.navigation:navigation-testing:${Versions.navigation}"
 
@@ -93,8 +80,7 @@ object TestLibraries {
     const val mockKInstrumented = "io.mockk:mockk-android:${Versions.mockK}"
 
     const val archCoreTesting = "androidx.arch.core:core-testing:${Versions.androidXCore}"
-    const val coroutinesTest =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
 }
 
 object GradlePlugins {

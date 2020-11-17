@@ -68,12 +68,13 @@ dependencies {
     implementation CoreLibraries.lifecycleViewModelKtx
 
     testImplementation TestLibraries.junit
+    testImplementation TestLibraries.mockKUnit
+    testImplementation TestLibraries.archCoreTesting
+    testImplementation TestLibraries.coroutinesTest
+
     androidTestImplementation TestLibraries.extJunit
     androidTestImplementation TestLibraries.espresso
     androidTestImplementation TestLibraries.navigationTesting
     androidTestImplementation TestLibraries.hiltAndroidTest
-    testImplementation TestLibraries.mockKUnit
     androidTestImplementation TestLibraries.mockKInstrumented
-    testImplementation TestLibraries.archCoreTesting
-    testImplementation TestLibraries.coroutinesTest
 }
